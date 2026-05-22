@@ -1,7 +1,15 @@
+require("dotenv").config();
+
 const mongoose = require("mongoose");
 
-mongoose.connect("mongodb://localhost:27017/BillingSystem").then(()=>{
-    console.log("connected !");
-}).catch((error)=>{
+const mongoURI = `mongodb://${process.env.MONGO_USER}:${process.env.MONGO_PASSWORD}@${process.env.MONGO_HOST}:${process.env.MONGO_PORT}/${process.env.MONGO_DB}?authSource=admin`;
+
+mongoose.connect(mongoURI, {
+    serverSelectionTimeoutMS: 30000
+})
+.then(() => {
+    console.log("MongoDB connected!");
+})
+.catch((error) => {
     console.log(error);
 });

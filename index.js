@@ -1,3 +1,4 @@
+require("dotenv").config();
 require("./db/connection");
 const express = require("express");
 const { route } = require("express/lib/router");
@@ -20,6 +21,6 @@ app.use(router);
 
 
 const port = process.env.PORT || 3000;
-app.listen(port, ()=>{
+app.listen(port, "0.0.0.0", ()=>{
     console.log(`connection is running at port. ${port}`);
 })
