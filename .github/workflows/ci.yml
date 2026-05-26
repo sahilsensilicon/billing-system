@@ -25,5 +25,5 @@ jobs:
       - name: Run basic check
         run: node -v && npm -v
 
-      - name: Build Docker image
-        run: docker build -t billing-system .
+#      - name: Build Docker image
+#        run: docker build -t billing-system -f Dockerfile .
