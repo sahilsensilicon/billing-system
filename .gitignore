@@ -1,4 +1,5 @@
 node_modules
 Dockerfile
 docker-compose.yml
-.env
+.env.github/workflows/actions-runner/
+actions-runner-linux-x64*.tar.gz
